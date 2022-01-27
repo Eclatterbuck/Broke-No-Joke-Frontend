@@ -1,9 +1,15 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import "./App.css";
 
-import './App.css';
+import Navbar from "./components/Navigation/Navbar";
+
 import Home from "./pages/Home";
+
 import Login from "./pages/users/Login";
+
 import Register from "./pages/users/Register";
+
+
 
 
 
