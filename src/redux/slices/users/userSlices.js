@@ -3,7 +3,6 @@ import axios from "axios";
 import baseURL from "../../../utils/baseURL";
 
 //Login action
-
 export const loginUserAction = createAsyncThunk(
   "user/login",
   async (payload, { rejectWithValue, getState, dispatch }) => {
@@ -32,7 +31,6 @@ export const loginUserAction = createAsyncThunk(
 );
 
 //Logout action
-
 export const logout = createAsyncThunk(
   "user/logout",
   async (payload, { rejectWithValue, getState, dispatch }) => {
@@ -49,7 +47,6 @@ export const logout = createAsyncThunk(
 );
 
 //register action
-
 export const registerUserAction = createAsyncThunk(
   "user/register",
   async (payload, { rejectWithValue, getState, dispatch }) => {
@@ -59,10 +56,7 @@ export const registerUserAction = createAsyncThunk(
       },
     };
     try {
-
-
-      //making http call here
-
+      //make http call here
       const { data } = await axios.post(
         `${baseURL}/users/register`,
         payload,
@@ -79,14 +73,10 @@ export const registerUserAction = createAsyncThunk(
 );
 
 //profile
-
-
 export const userProfileAction = createAsyncThunk(
   "user/profile",
   async (payload, { rejectWithValue, getState, dispatch }) => {
-
     //get user token from store
-
     const userToken = getState()?.users?.userAuth?.token;
     const config = {
       headers: {
@@ -108,13 +98,10 @@ export const userProfileAction = createAsyncThunk(
 );
 
 //update
-
 export const updateProfileAction = createAsyncThunk(
   "user/update",
   async (payload, { rejectWithValue, getState, dispatch }) => {
-
     //get user token from store
-
     const userToken = getState()?.users?.userAuth?.token;
     const config = {
       headers: {
@@ -123,9 +110,7 @@ export const updateProfileAction = createAsyncThunk(
       },
     };
     try {
-
       //make http call here
-
       const { data } = await axios.put(
         `${baseURL}/users/update`,
         {
@@ -147,8 +132,6 @@ export const updateProfileAction = createAsyncThunk(
 
 //slices
 //Get user from local storage and place it inside our store;
-
-
 const userLoginFromStorage = localStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))
   : undefined;
@@ -159,86 +142,65 @@ const usersSlices = createSlice({
     userAuth: userLoginFromStorage,
   },
   extraReducers: builder => {
-
-
-    //   Login action Pending for field
-
-
+    //   Login action
     builder.addCase(loginUserAction.pending, (state, action) => {
       state.userLoading = true;
       state.userAppErr = undefined;
       state.userServerErr = undefined;
     });
-
     //handle success state
-
     builder.addCase(loginUserAction.fulfilled, (state, action) => {
       state.userAuth = action?.payload;
       state.userLoading = false;
       state.userAppErr = undefined;
       state.userServerErr = undefined;
     });
-
     //handle rejected state
-
     builder.addCase(loginUserAction.rejected, (state, action) => {
       console.log(action);
       state.userLoading = false;
       state.userAppErr = action?.payload?.msg;
       state.userServerErr = action?.error?.msg;
     });
-
-    //   Register / 
-
+    //   Register
     builder.addCase(registerUserAction.pending, (state, action) => {
       state.userLoading = true;
       state.userAppErr = undefined;
       state.userServerErr = undefined;
     });
-
     //handle success state
-
     builder.addCase(registerUserAction.fulfilled, (state, action) => {
       state.isRegistered = true;
       state.userLoading = false;
       state.userAppErr = undefined;
       state.userServerErr = undefined;
     });
-
     //handle rejected state
-
     builder.addCase(registerUserAction.rejected, (state, action) => {
       state.userLoading = false;
       state.userAppErr = action?.payload?.msg;
       state.userServerErr = action?.error?.msg;
     });
-
     // Logout
-
     builder.addCase(logout.fulfilled, (state, action) => {
       state.userAuth = undefined;
       state.userLoading = false;
     });
 
     //Profile
-
     builder.addCase(userProfileAction.pending, (state, action) => {
       state.loading = true;
       state.AppErr = undefined;
       state.ServerErr = undefined;
     });
-
     //handle success state
-
     builder.addCase(userProfileAction.fulfilled, (state, action) => {
       state.profile = action?.payload;
       state.loading = false;
       state.AppErr = undefined;
       state.ServerErr = undefined;
     });
-
     //handle rejected state
-
     builder.addCase(userProfileAction.rejected, (state, action) => {
       state.loading = false;
       state.AppErr = action?.payload?.msg;
@@ -246,15 +208,12 @@ const usersSlices = createSlice({
     });
 
     //update
-
     builder.addCase(updateProfileAction.pending, (state, action) => {
       state.loading = true;
       state.AppErr = undefined;
       state.ServerErr = undefined;
     });
-
     //handle success state
-
     builder.addCase(updateProfileAction.fulfilled, (state, action) => {
       state.userUpdate = action?.payload;
       state.isEdited = true;
@@ -262,9 +221,7 @@ const usersSlices = createSlice({
       state.AppErr = undefined;
       state.ServerErr = undefined;
     });
-
     //handle rejected state
-
     builder.addCase(updateProfileAction.rejected, (state, action) => {
       state.loading = false;
       state.AppErr = action?.payload?.msg;
@@ -273,10 +230,4 @@ const usersSlices = createSlice({
   },
 });
 
-
-
-
 export default usersSlices.reducer;
-
-
-

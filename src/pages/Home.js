@@ -17,7 +17,7 @@ const Home = () => {
               <div className="col-12 col-lg-5 ms-auto">
                 <div className="mb-5">
                   <h2 className="display-4 fw-bold mb-5">
-                    Keep Track of Your Income & Expenses
+                    You're Broke Stop It!
                   </h2>
                   <p className="lead text-muted mb-5">
                     View all your income and expenses flow from your team in one
@@ -33,7 +33,7 @@ const Home = () => {
                     <a
                       target="_blank"
                       className="btn btn-secondary mb-2 mb-sm-0"
-                      href="https://www.youtube.com/channel/UCvu6J9q1AM6q4xysGqAvVyw"
+
                     >
                       Video Tutorial
                     </a>
@@ -41,7 +41,7 @@ const Home = () => {
                 </div>
                 <h1 className="text-danger">Admin Login </h1>
                 <p>User name: admin@gmail.com</p>
-                <p>password: 12345</p>
+                <p>password: 123456</p>
                 <div className="row align-items-center pt-5">
                   <div className="col-6 col-md-4 col-lg-3 col-xl-2 text-center mb-5">
                     <img
