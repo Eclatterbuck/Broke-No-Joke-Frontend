@@ -136,7 +136,7 @@ const userLoginFromStorage = localStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))
   : undefined;
 
-const usersSlices = createSlice({
+const userSlices = createSlice({
   name: "users",
   initialState: {
     userAuth: userLoginFromStorage,
@@ -230,4 +230,4 @@ const usersSlices = createSlice({
   },
 });
 
-export default usersSlices.reducer;
+export default userSlices.reducer;

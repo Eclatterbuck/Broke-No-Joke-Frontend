@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { logout } from "../../../redux/slices/users/usersSlices";
+import { logout } from "../../../redux/slices/users/userSlices";
 
 const PrivateNavbar = () => {
   const dispatch = useDispatch();

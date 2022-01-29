@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"; //redux hooks fi=or particular state in store
 import * as Yup from "yup";
-import { loginUserAction } from "../../redux/slices/users/usersSlices";
+import { loginUserAction } from "../../redux/slices/users/userSlices";
 import DisabledButton from "../../components/DisabledButton";
 
 //form validations

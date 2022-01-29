@@ -6,7 +6,7 @@ import Navbar from "./components/Navigation/Navbar";
 import ProtectedRoute from "./components/Navigation/ProtectedRoute";
 import NotAdmin from "./components/NotAdmin";
 import AddExpense from "./pages/expense/AddExpense";
-import ExpensesList from "./pages/expense/ExpensesList";
+import ExpensesList from "./pages/expense/ExpenseList";
 import Home from "./pages/Home";
 import AddIncome from "./pages/income/AddIncome";
 import IncomeList from "./pages/income/IncomeList";

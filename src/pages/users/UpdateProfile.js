@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { updateProfileAction } from "../../redux/slices/users/usersSlices";
+import { updateProfileAction } from "../../redux/slices/users/userSlices";
 import LoadingComponent from "../../components/Loading";
 import ErrorDisplayMessage from "../../components/ErrorDisplayMessage";
 import DisabledButton from "../../components/DisabledButton";

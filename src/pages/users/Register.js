@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import * as Yup from "yup";
-import { registerUserAction } from "../../redux/slices/users/usersSlices";
+import { registerUserAction } from "../../redux/slices/users/userSlices";
 import DisabledButton from "../../components/DisabledButton";
 
 //form validations

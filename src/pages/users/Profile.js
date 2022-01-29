@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { userProfileAction } from "../../redux/slices/users/usersSlices";
-import GraphDtata from "../../components/GraphDtata";
+import { userProfileAction } from "../../redux/slices/users/userSlices";
+import GraphDtata from "../../components/GraphData";
 import calcTransaction from "../../utils/accountStatistics";
 import UserProfileStats from "./UserProfileStats";
 import LoadingComponent from "../../components/Loading";

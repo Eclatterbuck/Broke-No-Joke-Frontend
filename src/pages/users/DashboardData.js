@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import LoadingComponent from "../../components/Loading";
 import ErrorDisplayMessage from "../../components/ErrorDisplayMessage";
 import { fetchAccountStatsAction } from "../../redux/slices/accountsStats/accountStatSlices";
-import GraphDtata from "../../components/GraphDtata";
+import GraphDtata from "../../components/GraphData";
 import currencyFormatter from "../../utils/cuurencyFormatter";
 
 const DashboardData = () => {
